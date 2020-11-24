@@ -1,8 +1,16 @@
+enum ActionKind {
+    Walking,
+    Idle,
+    Jumping
+}
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile16, function (sprite, location) {
     game.over(true)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile15, function (sprite, location) {
     壞人.destroy()
+})
+controller.anyButton.onEvent(ControllerButtonEvent.Repeated, function () {
+    animation.setAction(小朋友, ActionKind.Walking)
 })
 function changep () {
     tiles.placeOnRandomTile(小朋友, sprites.dungeon.stairLarge)
@@ -71,6 +79,9 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile5, function (sprite, location
         game.showLongText("穿越行人道勿闖紅燈", DialogLayout.Center)
         changep()
     }
+})
+controller.anyButton.onEvent(ControllerButtonEvent.Released, function () {
+    animation.setAction(小朋友, ActionKind.Idle)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     pause(600)
@@ -175,6 +186,64 @@ info.setLife(5)
     `, SpriteKind.Enemy)
 tiles.placeOnTile(壞人, tiles.getTileLocation(20, 20))
 壞人.follow(小朋友, 15)
+let anim = animation.createAnimation(ActionKind.Walking, 200)
+let ani = animation.createAnimation(ActionKind.Idle, 200)
+anim.addAnimationFrame(img`
+    . . . . . . . . . . . . . 
+    . . . . . f f f f . . . . 
+    . . . f f f f f f f f . . 
+    . . f f f f f f c f f f . 
+    f f f f f f f c c f f f c 
+    f f f f c f f f f f f f c 
+    . c c c f f f e e f f c c 
+    . f f f f f e e f f c c f 
+    . f f f b f e e f b f f f 
+    . f f 4 1 f 4 4 f 1 4 f f 
+    . . f e 4 4 4 4 4 e e f e 
+    . f e f b 7 7 7 e 4 4 4 e 
+    . e 4 f 7 7 7 7 e 4 4 e . 
+    . . . f 6 6 6 6 6 e e . . 
+    . . . f f f f f f f . . . 
+    . . . f f f . . . . . . . 
+    `)
+anim.addAnimationFrame(img`
+    . . . . . . . . . . . . . 
+    . . . . f f f f . . . . . 
+    . . f f f f f f f f . . . 
+    . f f f c f f f f f f . . 
+    c f f f c c f f f f f f f 
+    c f f f f f f f c f f f f 
+    c c f f e e f f f c c c . 
+    f c c f f e e f f f f f . 
+    f f f b f e e f b f f f . 
+    f f 4 1 f 4 4 f 1 4 f f . 
+    e f e e 4 4 4 4 4 e f . . 
+    e 4 4 4 e 7 7 7 b f e f . 
+    . e 4 4 e 7 7 7 7 f 4 e . 
+    . . e e 6 6 6 6 6 f . . . 
+    . . . f f f f f f f . . . 
+    . . . . . . . f f f . . . 
+    `)
+ani.addAnimationFrame(img`
+    . . . . f f f f . . . . . 
+    . . f f f f f f f f . . . 
+    . f f f f f f c f f f . . 
+    f f f f f f c c f f f c . 
+    f f f c f f f f f f f c . 
+    c c c f f f e e f f c c . 
+    f f f f f e e f f c c f . 
+    f f f b f e e f b f f f . 
+    . f 4 1 f 4 4 f 1 4 f . . 
+    . f e 4 4 4 4 4 4 e f . . 
+    . f f f e e e e f f f . . 
+    f e f b 7 7 7 7 b f e f . 
+    e 4 f 7 7 7 7 7 7 f 4 e . 
+    e e f 6 6 6 6 6 6 f e e . 
+    . . . f f f f f f . . . . 
+    . . . f f . . f f . . . . 
+    `)
+animation.attachAnimation(小朋友, anim)
+animation.attachAnimation(小朋友, ani)
 game.onUpdate(function () {
     if (小朋友.x - 壞人.x < 20) {
         壞人.say("小朋友跟我走，我們一起去玩？")

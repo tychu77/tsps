@@ -6,7 +6,8 @@
         "device": "*",
         "palette": "*",
         "light": "*",
-        "Color Fading": "github:jwunderl/pxt-color#v0.2.0"
+        "Color Fading": "github:jwunderl/pxt-color#v0.2.0",
+        "animation": "*"
     },
     "files": [
         "main.blocks",
