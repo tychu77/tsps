@@ -197,6 +197,7 @@ game.onUpdateInterval(5000, function () {
         tiles.setTileAt(tiles.getTileLocation(14, 10), myTiles.tile11)
         tiles.setTileAt(tiles.getTileLocation(16, 8), myTiles.tile11)
         tiles.setTileAt(tiles.getTileLocation(9, 8), myTiles.tile11)
+        tiles.setTileAt(tiles.getTileLocation(19, 34), myTiles.tile11)
     } else {
         tiles.setTileAt(tiles.getTileLocation(4, 36), myTiles.tile7)
         tiles.setTileAt(tiles.getTileLocation(6, 34), myTiles.tile7)
