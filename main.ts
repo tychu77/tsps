@@ -18,8 +18,8 @@ function changep () {
 }
 scene.onOverlapTile(SpriteKind.Player, sprites.vehicle.roadVertical, function (sprite, location) {
     pause(600)
-    game.showLongText("勿穿越分隔島請走行人穿越道", DialogLayout.Center)
     changep()
+    game.splash("請勿穿越分隔島。", "請走行人穿越道")
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile17, function (sprite, location) {
     game.over(true)
@@ -27,17 +27,17 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile17, function (sprite, locatio
 scene.onOverlapTile(SpriteKind.Player, sprites.vehicle.roadHorizontal, function (sprite, location) {
     pause(600)
     changep()
-    game.showLongText("勿穿越分隔島請走行人穿越道", DialogLayout.Center)
+    game.splash("請勿穿越分隔島。", "請走行人穿越道")
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     pause(600)
-    game.showLongText("穿越行人道時請注意來車", DialogLayout.Center)
+    game.splash("穿越行人道時，", "請注意來車")
     changep()
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile6, function (sprite, location) {
     if (tiles.tileAtLocationEquals(tiles.getTileLocation(4, 36), myTiles.tile7)) {
         pause(600)
-        game.showLongText("勿穿越分隔島請走行人穿越道", DialogLayout.Center)
+        game.splash("穿越行人道，", "勿闖紅燈")
         changep()
     }
 })
@@ -76,7 +76,7 @@ sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile5, function (sprite, location) {
     if (tiles.tileAtLocationEquals(tiles.getTileLocation(4, 36), myTiles.tile7)) {
         pause(600)
-        game.showLongText("穿越行人道勿闖紅燈", DialogLayout.Center)
+        game.splash("穿越行人道，", "勿闖紅燈")
         changep()
     }
 })
@@ -85,7 +85,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Released, function () {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     pause(600)
-    game.showLongText("不要接觸陌生人", DialogLayout.Center)
+    game.splash("放學回家要遠離陌生人")
     changep()
     tiles.placeOnTile(壞人, tiles.getTileLocation(randint(3, 35), randint(3, 35)))
 })
