@@ -94,6 +94,16 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "tile19": {
+        "data": "hwQQABAAAAD/////////////////////////////////////////f////v////d3/+//7/9///f//u/u//d//+7u7v93d/f/7u7u/3d3d////u/u/3f/9//v/+//d/d3///+/////////////////////////////////////////////////w==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile20": {
+        "data": "hwQQABAAAAD/////////////////////////////////////////b///8v////Zm/y//L/9v//b/8i8i//Zv/yIiIv9mZvb/IiIi/2ZmZv//8i8i/2b/9v8v/y//ZvZm///y/////////////////////////////////////////////////w==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
     "level": {
         "id": "level",
         "mimeType": "application/mkcd-tilemap",

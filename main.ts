@@ -35,7 +35,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     changep()
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile6, function (sprite, location) {
-    if (tiles.tileAtLocationEquals(tiles.getTileLocation(4, 36), myTiles.tile7)) {
+    if (tiles.tileAtLocationEquals(tiles.getTileLocation(4, 36), myTiles.tile20)) {
         pause(600)
         game.splash("穿越行人道，", "勿闖紅燈")
         changep()
@@ -74,7 +74,7 @@ sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
     壞人.follow(小朋友, 15)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile5, function (sprite, location) {
-    if (tiles.tileAtLocationEquals(tiles.getTileLocation(4, 36), myTiles.tile7)) {
+    if (tiles.tileAtLocationEquals(tiles.getTileLocation(4, 36), myTiles.tile20)) {
         pause(600)
         game.splash("穿越行人道，", "勿闖紅燈")
         changep()
@@ -100,7 +100,7 @@ let car2: Sprite = null
 let car1: Sprite = null
 let 壞人: Sprite = null
 let 小朋友: Sprite = null
-tiles.setTilemap(tiles.createTilemap(hex`280028000202020202020202020202020202020202020202020202020202020202020202020202020202020202070707070707070b0b0b0b0b0b0b08090719191919191919191919191919191919191917171702020b0b0b0b0b0b0b0c0303030315150809071919191919191919191919191919191919071c1d1e02020303030303030303080c0d0d0d0c080907070707191919010a0809191919191919190707080902020d0d0d0d0d0d0d0d0d0f0707070a080c0b0b0b0b191919070a080919070707070707070a08090202070707070707070707071919190a081515030303191919070a08091907070b0b0b0b0b0c080c0202191919191919191919191919070a080c0d0d0d0d191919070a080919070a03030303031503030202070707070707070707070707070a111a07070707191919070a080919070a160c0d0c08140d0d02020b0b0b0b0b0b0b0b140b0b180b0c111407191919191919070a080919070a1609070a0809071b02020303030303101003101003031010080907191919190b0b0b0c080919070a0809190a0809071b02020d0d0d0d0d0d14110c0d0d0d0d141109071919191903031515080919070a0809190a0809071b02020707070707070a1109070707070a110c0b0b0b19190d0d0d0c080919070a0809190a0809071b02021919191919070a0809071b1b070a081515080919191919070a08091919191919190a0809071b02021919191919070a0809071b1b070d0d0d0c080919191919070a08091919191919190a0818071b02020707070707070a0809071b1b070707070a080919191919070a08091919191919190a0809071b02020b0b0b0b0b0b0a0809071b1b1b1b1b070a080907070707070a16090707070707010a0809071b0202030303030809071b1b1b1b1b1b1b1b070a080c0b0b180b0b0c160c0b140b0b0b0b0c0809071b02020d0d0d0c0809071b1b1b1b1b1b1b1b070a08151503030315150303101003101003030809071b02021919070a0809071b1b1b1b1b1b1b1b070a080c0d0d0d0d0d0d0c0d0d0c11140d0d0d0d0d071b02021919070a0809071b1b1b0a08091b1b070a0809071b1b1b1b1b1b1b070a11070707070707071b02021919070a0809071b1b1b0a08091b1b070a0809071b1b0a08091b1b070a08071b1b1b1b1b1b1b02021919070a0809071b1b1b0a08091b1b070a0809071b1b0a08091b1b070a08071b1b1b1b1b1b1b02021919070a0809070707070a16091b1b070a11090707070a08090707070a11070707070707070702021919070a08141a0b0b0b0c160c0b0b0b1a11140b0b0b0c080c0b0b0b14110b0b0b0b0b0b0b0b02021919070a0810100303030303030303101008101003030303030303101008101003030303030302020707070c160c0d0d0d0d0d0d180d0d0d14110c0d0c160c0d0d180d0d1a11140d0d0d0d0d0d0d02020c0c0c0c1609070707070707070707070a1109070a160907070707070a110c070707070707070202030303030809071919191919191919070a0809190a080919191919070a08090719191919191902020707070a080c0b0b0b0b0b0b191919070a0809190a080919191919070a08090b0b0b0b19191902021919070a0815150303030303191919070a0809190a080919191919070a08151503030319191902021919070a080c0d0d0d0d0d0d191919070a0809190a080901191919070a080c0d0d0d0d19191902021919070a0809070707070707191919070a08091919191919191919070a08090707070119191902021919070a0809071919191919191919070a08091919191919191919070a08090719191919191902020707070a0809070707070707070707070a11090707070707070707070a08090707070707070702020b0b180c08140b0b0b0b0b0b0b0b180b1a11140b0b0b0b0b0b0b0b0b0c080c0b0b0b0b0b0b0b0202030310100310100303030303030303101003101003030303030303030303030303030303030302020d0d0d14110c0d0d0d0d0d0d0d0d0d0d140d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d02020707070e0c090612130707070707070707070707070707070707070707070707070707070707020207070707070504050707070707070707070707070707070707070707070707070707070707070202020202020202020202020202020202020202020202020202020202020202020202020202020202`, img`
+tiles.setTilemap(tiles.createTilemap(hex`280028000202020202020202020202020202020202020202020202020202020202020202020202020202020202070707070707070b0b0b0b0b0b0b08090718181818181818181818181818181818181816161602020b0b0b0b0b0b0b0c0303030314140809071818181818181818181818181818181818071b1c1d02020303030303030303080c0d0d0d0c080907070707181818010a0809181818181818180707080902020d0d0d0d0d0d0d0d0d0f0707070a080c0b0b0b0b181818070a080918070707070707070a08090202070707070707070707071818180a081414030303181818070a08091807070b0b0b0b0b0c080c0202181818181818181818181818070a080c0d0d0d0d181818070a080918070a03030303031403030202070707070707070707070707070a111907070707181818070a080918070a150c0d0c081e0d0d02020b0b0b0b0b0b0b0b1e0b0b170b0c111e07181818181818070a080918070a1509070a0809071a02020303030303101003101003031010080907181818180b0b0b0c080918070a0809180a0809071a02020d0d0d0d0d0d1e110c0d0d0d0d1e1109071818181803031414080918070a0809180a0809071a02020707070707070a1109070707070a110c0b0b0b18180d0d0d0c080918070a0809180a0809071a02021818181818070a0809071a1a070a081414080918181818070a08091818181818180a0809071a02021818181818070a0809071a1a070d0d0d0c080918181818070a08091818181818180a0817071a02020707070707070a0809071a1a070707070a080918181818070a08091818181818180a0809071a02020b0b0b0b0b0b0a0809071a1a1a1a1a070a080907070707070a15090707070707010a0809071a0202030303030809071a1a1a1a1a1a1a1a070a080c0b0b170b0b0c150c0b1e0b0b0b0b0c0809071a02020d0d0d0c0809071a1a1a1a1a1a1a1a070a08141403030314140303101003101003030809071a02021818070a0809071a1a1a1a1a1a1a1a070a080c0d0d0d0d0d0d0c0d0d0c111e0d0d0d0d0d071a02021818070a0809071a1a1a0a08091a1a070a0809071a1a1a1a1a1a1a070a11070707070707071a02021818070a0809071a1a1a0a08091a1a070a0809071a1a0a08091a1a070a08071a1a1a1a1a1a1a02021818070a0809071a1a1a0a08091a1a070a0809071a1a0a08091a1a070a08071a1a1a1a1a1a1a02021818070a0809070707070a15091a1a070a11090707070a08090707070a11070707070707070702021818070a081e190b0b0b0c150c0b0b0b19111e0b0b0b0c080c0b0b0b1e110b0b0b0b0b0b0b0b02021818070a0810100303030303030303101008101003030303030303101008101003030303030302020707070c150c0d0d0d0d0d0d170d0d0d1e110c0d0c150c0d0d170d0d19111e0d0d0d0d0d0d0d02020c0c0c0c1509070707070707070707070a1109070a150907070707070a110c070707070707070202030303030809071818181818181818070a0809180a080918181818070a08090718181818181802020707070a080c0b0b0b0b0b0b181818070a0809180a080918181818070a08090b0b0b0b18181802021818070a0814140303030303181818070a0809180a080918181818070a08141403030318181802021818070a080c0d0d0d0d0d0d181818070a0809180a080901181818070a080c0d0d0d0d18181802021818070a0809070707070707181818070a08091818181818181818070a08090707070118181802021818070a0809071818181818181818070a08091818181818181818070a08090718181818181802020707070a0809070707070707070707070a11090707070707070707070a08090707070707070702020b0b170c081e0b0b0b0b0b0b0b0b170b19111e0b0b0b0b0b0b0b0b0b0c080c0b0b0b0b0b0b0b0202030310100310100303030303030303101003101003030303030303030303030303030303030302020d0d0d1e110c0d0d0d0d0d0d0d0d0d0d1e0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d02020707070e0c090612130707070707070707070707070707070707070707070707070707070707020207070707070504050707070707070707070707070707070707070707070707070707070707070202020202020202020202020202020202020202020202020202020202020202020202020202020202`, img`
     2222222222222222222222222222222222222222
     2..............2..222222222222222222...2
     2.................22222222222222222....2
@@ -141,8 +141,8 @@ tiles.setTilemap(tiles.createTilemap(hex`280028000202020202020202020202020202020
     2......................................2
     2222222222222222222222222222222222222222
     2222222222222222222222222222222222222222
-    `, [myTiles.transparency16,myTiles.tile1,sprites.builtin.brick,sprites.vehicle.roadHorizontal,myTiles.tile2,myTiles.tile3,myTiles.tile4,sprites.castle.tileGrass2,sprites.vehicle.roadVertical,sprites.castle.tilePath6,sprites.castle.tilePath4,sprites.castle.tilePath2,sprites.castle.tilePath5,sprites.castle.tilePath8,sprites.castle.tilePath7,sprites.castle.tilePath9,myTiles.tile5,myTiles.tile6,myTiles.tile8,myTiles.tile9,myTiles.tile7,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,sprites.builtin.forestTiles2,sprites.dungeon.stairLarge,sprites.castle.shrub,myTiles.tile16,myTiles.tile17,myTiles.tile18], TileScale.Sixteen))
-game.splash("放學回家要注意交通號誌", "遠離陌生人，或躲至便利商店")
+    `, [myTiles.transparency16,myTiles.tile1,sprites.builtin.brick,sprites.vehicle.roadHorizontal,myTiles.tile2,myTiles.tile3,myTiles.tile4,sprites.castle.tileGrass2,sprites.vehicle.roadVertical,sprites.castle.tilePath6,sprites.castle.tilePath4,sprites.castle.tilePath2,sprites.castle.tilePath5,sprites.castle.tilePath8,sprites.castle.tilePath7,sprites.castle.tilePath9,myTiles.tile5,myTiles.tile6,myTiles.tile8,myTiles.tile9,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,sprites.builtin.forestTiles2,sprites.dungeon.stairLarge,sprites.castle.shrub,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile20], TileScale.Sixteen))
+game.splash("放學回家要注意行人號誌", "遠離陌生人，或躲至便利商店")
 小朋友 = sprites.create(img`
     . . . . f f f f . . . . . 
     . . f f f f f f f f . . . 
@@ -250,40 +250,40 @@ game.onUpdate(function () {
     }
 })
 game.onUpdateInterval(5000, function () {
-    if (tiles.tileAtLocationEquals(tiles.getTileLocation(4, 36), myTiles.tile7)) {
-        tiles.setTileAt(tiles.getTileLocation(4, 36), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(6, 34), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(17, 36), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(6, 23), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(17, 25), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(19, 23), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(29, 23), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(31, 25), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(29, 16), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(31, 18), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(7, 10), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(9, 8), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(14, 10), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(16, 8), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(9, 8), myTiles.tile11)
-        tiles.setTileAt(tiles.getTileLocation(19, 34), myTiles.tile11)
+    if (tiles.tileAtLocationEquals(tiles.getTileLocation(4, 36), myTiles.tile20)) {
+        tiles.setTileAt(tiles.getTileLocation(4, 36), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(6, 34), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(17, 36), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(6, 23), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(17, 25), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(19, 23), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(29, 23), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(31, 25), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(29, 16), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(31, 18), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(7, 10), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(9, 8), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(14, 10), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(16, 8), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(9, 8), myTiles.tile19)
+        tiles.setTileAt(tiles.getTileLocation(19, 34), myTiles.tile19)
     } else {
-        tiles.setTileAt(tiles.getTileLocation(4, 36), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(6, 34), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(17, 36), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(19, 34), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(6, 23), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(17, 25), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(19, 23), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(29, 23), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(31, 25), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(29, 16), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(31, 18), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(7, 10), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(9, 8), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(14, 10), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(16, 8), myTiles.tile7)
-        tiles.setTileAt(tiles.getTileLocation(36, 7), myTiles.tile7)
+        tiles.setTileAt(tiles.getTileLocation(4, 36), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(6, 34), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(17, 36), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(19, 34), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(6, 23), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(17, 25), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(19, 23), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(29, 23), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(31, 25), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(29, 16), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(31, 18), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(7, 10), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(9, 8), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(14, 10), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(16, 8), myTiles.tile20)
+        tiles.setTileAt(tiles.getTileLocation(36, 7), myTiles.tile20)
     }
 })
 game.onUpdateInterval(6000, function () {
