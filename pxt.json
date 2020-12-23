@@ -1,6 +1,6 @@
 {
     "name": "再興小學交通安全遊戲",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "",
     "dependencies": {
         "device": "*",
